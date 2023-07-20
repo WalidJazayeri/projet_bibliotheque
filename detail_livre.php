@@ -10,10 +10,15 @@ FROM book
 JOIN author ON author.id=book.author_id
 JOIN category ON category.id=book.category_id
 JOIN publisher ON publisher.id=publisher_id
-WHERE book.id={$idLivre}";
+WHERE book.id=:monidprotege";
 
-$statement = $pdo->query($sql);
+
+$statement = $pdo->prepare($sql);
+$statement->bindValue(':monidprotege', $idLivre, \PDO::PARAM_INT);
+$statement->execute();
 $livre = $statement->fetch(PDO::FETCH_ASSOC);
+
+
 echo "Tittle : {$livre['title']}";
 echo BR;
 echo "Publication : {$livre['publication_date']}";

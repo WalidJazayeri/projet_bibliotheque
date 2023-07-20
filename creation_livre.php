@@ -6,10 +6,22 @@
     <label for="name">Enter your title: </label>
     <input type="text" name="name" id="name" required>
   </div>
+
   <div class="form-example">
-    <label for="nb_pages">Enter number of pages: </label>
-    <input type="number" name="nb_pages" id="nb_pages" required>
+    <label for="publication_date">Date de publication: </label>
+    <input type="number" name="publication_date" id="publication_date" required>
   </div>
+
+  <div class="form-example">
+    <label for="language">Language : </label>
+    <input type="text" name="language" id="language" required>
+  </div>
+  
+  <div class="form-example">
+    <label for="description">Description: </label>
+    <input type="text" name="description" id="description" >
+  </div>
+  
   <div class="form-example">
     <input type="submit" value="Envoyer">
   </div>
