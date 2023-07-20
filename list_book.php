@@ -1,18 +1,20 @@
-<?php include 'header.php' ?>
+<?php include 'header.php';
+include 'function.php'; 
+?>
 
 <h1>Les des livres</h1>
 <br>
 
 <?php
 
-$sql = "SELECT * FROM book";
-$statement = $pdo->query($sql);
-$livres = $statement->fetchAll(PDO::FETCH_ASSOC);
+$livres=connect_list('book');
 foreach($livres as $livre){
     echo "{$livre['title']} : <a href=detail_livre.php?id={$livre['id']}>Detail</a> 
     - <a href=supprimer_livre.php?id={$livre['id']}>Supprimer un livre</a>
     - <a href=modifier_livre.php?id={$livre['id']}>Modifier un livre</a>".BR;
 }
+
+
 ?>
 
 <?php include 'footer.php' ?>

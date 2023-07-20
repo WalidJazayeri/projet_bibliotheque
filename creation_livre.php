@@ -1,10 +1,10 @@
 <?php include 'header.php' ?>
 
     Creation of book
-<form action="confirm_create_book.php" method="GET" class="form-example">
+<form action="confirm_create_book.php" method="POST" class="form-example">
   <div class="form-example">
-    <label for="name">Enter your title: </label>
-    <input type="text" name="name" id="name" required>
+    <label for="title">Enter your title: </label>
+    <input type="text" name="title" id="title" required>
   </div>
 
   <div class="form-example">
@@ -25,6 +25,7 @@
   <div class="form-example">
     <input type="submit" value="Envoyer">
   </div>
+  
 </form>
 
 <?php include 'footer.php' ?>
